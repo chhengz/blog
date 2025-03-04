@@ -1,6 +1,7 @@
 <?php 
-include 'config/dbcon.php';
-include 'includes/header.php'; ?>
+include('authentication.php');
+include('includes/header.php'); ?>
+
 
 <div class="container-fluid px-4">
     <h1 class="mt-4">PHP | Admin Panel for blogging</h1>
