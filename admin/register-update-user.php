@@ -19,12 +19,12 @@ if(isset($_POST['update_user_btn']))
     if($update_query_run)
     {
         $_SESSION['message'] = "✅ User Updated Successfully";
-        header("Location: view-register.php");
+        header("Location: register-view.php");
     }
     else
     {
         $_SESSION['message'] = "❌ User Update Failed!";
-        header("Location: view-register.php");
+        header("Location: register-view.php");
         exit(0);
     }
 }

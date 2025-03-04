@@ -33,7 +33,7 @@ include("./includes/header.php");
                         if (mysqli_num_rows($users_run) > 0) {
                             foreach ($users_run as $user) {
                     ?>
-                                <form action="update_user_register.php" method="POST">
+                                <form action="register-update-user.php" method="POST">
                                     <input type="hidden"  name="user_id" value="<?= $user['id'] ?>">
                                     <div class="form-group mb-3">
                                         <div class="row">

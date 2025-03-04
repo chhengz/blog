@@ -17,7 +17,9 @@ include("./includes/header.php");
             <?php include("message.php"); ?>
             <div class="card">
                 <div class="card-header">
-                    <h4>Registerd User</h4>
+                    <h4>Registerd User
+                        <a href="register-edit.php" class="btn btn-primary float-end">Add User</a>
+                    </h4>
                 </div>
                 <div class="card-body">
                     <table class="table table-bordered">

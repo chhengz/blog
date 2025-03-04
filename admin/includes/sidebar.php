@@ -8,7 +8,7 @@
                                 Dashboard
                             </a>
                             
-                            <a class="nav-link" href="view-register.php">
+                            <a class="nav-link" href="register-view.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Registerd User
                             </a>
