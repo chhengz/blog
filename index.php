@@ -8,9 +8,7 @@ include 'includes/navbar.php';
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-
                 <?php include("message.php") ?>
-
                 <h1>PHP Blog</h1>
                 <!-- <button class="btn btn-primary">Login</button> -->
             </div>

@@ -18,10 +18,11 @@ include("./includes/header.php");
             <div class="card">
                 <div class="card-header">
                     <h4>Registerd User
-                        <a href="register-edit.php" class="btn btn-primary float-end">Add User</a>
+                        <a href="register-add-user.php" class="btn btn-primary float-end">Add User</a>
                     </h4>
                 </div>
                 <div class="card-body">
+
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -54,7 +55,14 @@ include("./includes/header.php");
                                             }
                                             ?></td>
                                         <td><a href="register-edit.php?id=<?= $row['id'] ?>" class="btn btn-primary">Edit</a></td>
-                                        <td><button type="submit" name="delete_register_btn" class="btn btn-danger">Delete</button></td>
+                                        <td>
+                                            <form action="register-update-user.php" method="post">
+                                                <button type="submit" name="delete_user_btn"
+                                                value="<?= $row['id'] ?>"
+                                                onclick="return confirm('Are you sure you want to delete this record? 🗑️')"
+                                                class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 <?php
                                 }
@@ -68,7 +76,9 @@ include("./includes/header.php");
                             ?>
                         </tbody>
                     </table>
+                    
                 </div>
+                
             </div>
         </div>
     </div>
