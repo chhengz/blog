@@ -8,9 +8,9 @@ include("./includes/header.php");
 <div class="contaienr-fluid px-4">
     <h1 class="mt-4">PHP Admin Panel for Blogging</h1>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item active">Dashboard</li>
-        <li class="breadcrumb-item active">Users</li>
-        <!-- <li class="breadcrumb-item">Add</li> -->
+        <li class="breadcrumb-item">Dashboard</li>
+        <li class="breadcrumb-item">Users</li>
+        <li class="breadcrumb-item active">Add</li>
     </ol>
     <div class="row">
         <div class="col-md-12">

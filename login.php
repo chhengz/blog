@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if (isset($_SESSION['auth'])) {
     if (!isset($_SESSION['message'])) {
         $_SESSION['message'] = "You are already logged In!";
@@ -17,15 +16,11 @@ include './includes/navbar.php';
     <div class="container">
         <div class="row justify-content-center ">
             <div class="col-md-5">
-
                 <?php include("message.php") ?>
-
                 <div class="card shadow-lg border-0 rounded-lg mt-3">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                     <div class="card-body">
-
                         <form action="logincode.php" method="post">
-
                             <div class="form-floating mb-3">
                                 <input class="form-control" name="email" id="inputEmail" type="email" placeholder="name@example.com" required />
                                 <label for="inputEmail">Email address</label>
@@ -42,9 +37,7 @@ include './includes/navbar.php';
                                 <a class="small" href="#!">Forgot Password?</a>
                                 <button type="submit" name="login_btn" class="btn btn-primary">Login</button>
                             </div>
-
                         </form>
-                        
                     </div>
                     <div class="card-footer text-center py-3">
                                         <div class="small"><a href="register.php">Need an account? Sign up!</a></div>
@@ -53,7 +46,6 @@ include './includes/navbar.php';
             </div>
         </div>
     </div>
-
 </div>
 
 <?php include 'includes/footer.php'; ?>

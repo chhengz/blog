@@ -8,8 +8,8 @@ include("./includes/header.php");
 <div class="contaienr-fluid px-4">
     <h1 class="mt-4">PHP Admin Panel for Blogging</h1>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item active">Dashboard</li>
-        <li class="breadcrumb-item">Category</li>
+        <li class="breadcrumb-item">Dashboard</li>
+        <li class="breadcrumb-item active">Category</li>
         <?php
         if (isset($_GET['id'])) {
         ?> <li class="breadcrumb-item"><?= $_GET['id'] ?></li> <?php

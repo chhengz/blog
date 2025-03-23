@@ -8,7 +8,7 @@ include("./includes/header.php");
 
     <ol class="breadcrumb">
         <li class="breadcrumb-item">Dashboard</li>
-        <li class="breadcrumb-item active">Category</li>
+        <li class="breadcrumb-item active">Posts</li>
     </ol>
 
     <div class="row">
@@ -16,13 +16,13 @@ include("./includes/header.php");
             <?php include("message.php"); ?>
             <div class="card">
                 <div class="card-header">
-                    <h4>Categories
-                        <a href="category-add.php" class="btn btn-primary float-end">Add Category</a>
+                    <h4>Posts
+                        <a href="post-add.php" class="btn btn-primary float-end">Add Post</a>
                     </h4>
                 </div>
                 <div class="card-body">
 
-                    <table class="table table-bordered">
+                <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -34,7 +34,7 @@ include("./includes/header.php");
                         </thead>
                         <tbody>
                             <?php
-                            $category = "SELECT * FROM categories WHERE status != '2' ";
+                            $category = "SELECT * FROM posts WHERE status != '2' ";
                             $category_run = mysqli_query($con, $category);
                             if (mysqli_num_rows($category_run) > 0) {
                                 foreach ($category_run as $item) {
@@ -43,7 +43,7 @@ include("./includes/header.php");
                                         <td><?= $item['id'] ?></td>
                                         <td><?= $item['name'] ?></td>
                                         <td><?= $item['status']== '1' ? 'Hidden' : 'Visible' ?></td>
-                                        <td><a href="category-edit.php?id=<?= $item['id'] ?>" class="btn btn-primary">Edit</a></td>
+                                        <td><a href="post-edit.php?id=<?= $item['id'] ?>" class="btn btn-primary">Edit</a></td>
                                         <td>
                                             <form action="category-update.php" method="post">
                                                 <button type="submit" name="delete_category_btn"
@@ -66,6 +66,7 @@ include("./includes/header.php");
                         </tbody>
                     </table>
 
+                
                 </div>
             </div>
         </div>
