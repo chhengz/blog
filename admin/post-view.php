@@ -22,60 +22,72 @@ include("./includes/header.php");
                 </div>
                 <div class="card-body">
 
-                <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Status</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $category = "SELECT * FROM posts WHERE status != '2' ";
-                            $category_run = mysqli_query($con, $category);
-                            if (mysqli_num_rows($category_run) > 0) {
-                                foreach ($category_run as $item) {
-                            ?>
-                                    <tr>
-                                        <td><?= $item['id'] ?></td>
-                                        <td><?= $item['name'] ?></td>
-                                        <td><?= $item['status']== '1' ? 'Hidden' : 'Visible' ?></td>
-                                        <td><a href="post-edit.php?id=<?= $item['id'] ?>" class="btn btn-primary">Edit</a></td>
-                                        <td>
-                                            <form action="category-update.php" method="post">
-                                                <button type="submit" name="delete_category_btn"
-                                                    value="<?= $item['id'] ?>"
-                                                    onclick="return confirm('Are you sure you want to delete this record? 🗑️')"
-                                                    class="btn btn-danger">Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                <?php
-                                }
-                            } else {
-                                ?>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
                                 <tr>
-                                    <td colspan="6">Record Not Found!</td>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Image</th>
+                                    <th>Status</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
-                            <?php
-                            }
-                            ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <?php
+                                // $posts = "SELECT * FROM posts WHERE status!='2' ";
+                                $posts = "SELECT p.*, c.name AS cname FROM posts p,categories c WHERE c.id = p.category_id ";
+                                $posts_run = mysqli_query($con, $posts);
 
-                
+                                if (mysqli_num_rows($posts_run) > 0) {
+                                    foreach ($posts_run as $post) {
+                                        ?>
+                                        <tr>
+                                            <td><?= $post['id']; ?></td>
+                                            <td><?= $post['name']; ?></td>
+                                            <td><?= $post['cname']; ?></td>
+                                            <td>
+                                                <img src="../uploads/posts/<?= $post['image']; ?>" alt="image" width="60px"
+                                                    height="60px" />
+                                            </td>
+                                            <td>
+                                                <?= $post['status'] == '1' ? 'Hidden' : 'Visible'; ?>
+                                            </td>
+                                            <td>
+                                                <a href="post-edit.php?id=<?= $post['id']; ?>" class="btn btn-primary">Edit</a>
+                                            </td>
+                                            <td>
+                                                <form action="post-update.php" method="POST">
+                                                    <button type="submit" name="post_delete_btn" value="<?= $post['id'] ?>"
+                                                    onclick="return confirm('Are you sure you want to delete this record? 🗑️')"
+                                                        class="btn btn-danger">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                    }
+                                } else {
+                                    ?>
+                                    <tr>
+                                        <td colspan="6">No Record Found</td>
+                                    </tr>
+                                    <?php
+                                }
+                                ?>
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<?php
+    <?php
 
-include("includes/footer.php");
-include("includes/script.php");
+    include("includes/footer.php");
+    include("includes/script.php");
 
-?>
+    ?>

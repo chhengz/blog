@@ -43,6 +43,7 @@ if(isset($_POST['update_category_btn']))
     $meta_title = $_POST['meta_title'];
     $meta_description = $_POST['meta_description'];
     $meta_keyword = $_POST['meta_keyword'];
+
     $navbar_status = $_POST['navbar_status']== true ? '1' : '0';
     $status = $_POST['status'] == true ? '1' : '0';
 

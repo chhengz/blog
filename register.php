@@ -1,6 +1,11 @@
 <?php
+include 'includes/config.php';
 
-session_start();
+$page_title = "Register";
+$meta_description = "Register page description blogging website";
+$meta_keywords = "php, html, css, laravel, reactjs";
+
+include 'includes/header.php';
 
 if (isset($_SESSION['auth'])) {
     if (!isset($_SESSION['message'])) {
@@ -10,7 +15,7 @@ if (isset($_SESSION['auth'])) {
     exit(0);
 }
 
-include 'includes/header.php';
+
 include './includes/navbar.php';
 ?>
 

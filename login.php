@@ -1,5 +1,13 @@
 <?php
-session_start();
+include 'includes/config.php';
+
+$page_title = "Login";
+$meta_description = "Login page description blogging website";
+$meta_keywords = "php, html, css, laravel, reactjs";
+
+
+include 'includes/header.php';
+
 if (isset($_SESSION['auth'])) {
     if (!isset($_SESSION['message'])) {
         $_SESSION['message'] = "You are already logged In!";
@@ -8,7 +16,6 @@ if (isset($_SESSION['auth'])) {
     exit(0);
 }
 
-include 'includes/header.php';
 include './includes/navbar.php';
 ?>
 
@@ -18,15 +25,19 @@ include './includes/navbar.php';
             <div class="col-md-5">
                 <?php include("message.php") ?>
                 <div class="card shadow-lg border-0 rounded-lg mt-3">
-                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                    <div class="card-header">
+                        <h3 class="text-center font-weight-light my-4">Login</h3>
+                    </div>
                     <div class="card-body">
                         <form action="logincode.php" method="post">
                             <div class="form-floating mb-3">
-                                <input class="form-control" name="email" id="inputEmail" type="email" placeholder="name@example.com" required />
+                                <input class="form-control" name="email" id="inputEmail" type="email"
+                                    placeholder="name@example.com" required />
                                 <label for="inputEmail">Email address</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-control" name="password" id="inputPassword" type="password" placeholder="Password" required />
+                                <input class="form-control" name="password" id="inputPassword" type="password"
+                                    placeholder="Password" required />
                                 <label for="inputPassword">Password</label>
                             </div>
                             <div class="form-check mb-3">
@@ -40,8 +51,8 @@ include './includes/navbar.php';
                         </form>
                     </div>
                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="register.php">Need an account? Sign up!</a></div>
-                                    </div>
+                        <div class="small"><a href="register.php">Need an account? Sign up!</a></div>
+                    </div>
                 </div>
             </div>
         </div>
