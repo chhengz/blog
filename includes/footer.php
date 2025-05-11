@@ -6,7 +6,7 @@
                 <div style="width: 50px; height: 4px; background-color: gray; margin-bottom: 8px; border-radius: 4px;"></div>
 
                 <div><a href="" class="text-black">Home</a></div>
-                <div><a href="" class="text-black">About Us</a></div>
+                <div><a href="about.php" class="text-black">About Us</a></div>
                 <div><a href="" class="text-black">Contact Us</a></div>
             </div>
 
