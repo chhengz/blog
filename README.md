@@ -4,5 +4,6 @@ Admin Account (Demo)
 - password: `1234`
 
 # Path
-. Guest `/`
-. Admin Dashboard `/admin` to access Dashboard.
+. Guest: `/`,
+
+. Admin Dashboard: `/admin` to access Dashboard.
