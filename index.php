@@ -98,6 +98,15 @@ include 'includes/navbar.php';
                         sokchheng802@gmail.com
                     </div>
                 </div>
+
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h4>About Me</h4>
+                    </div>
+                    <div class="card-body">
+                        <a href="about.php" class="btn btn-primary">About Me</a>
+                    </div>
+                </div>
             </div>
 
         </div>

@@ -14,7 +14,7 @@ include './includes/navbar.php';
 <div class="py-5">
     <div class="container">
         <div class="text-center mb-5">
-            <h1 class="display-4 text-primary fw-bold">About The Project</h1>
+            <h1 class="display-4 text-primary fw-bold">About This Project</h1>
             <p class="lead text-secondary">
                 This PHP blog system provides a complete solution for managing blog content with user authentication.
             </p>
@@ -30,13 +30,14 @@ include './includes/navbar.php';
                     <p><strong>Class:</strong> A6-202</p>
                 </div>
             </div>
-
+            
             <!-- Student Card -->
             <div class="col-md-5">
                 <div class="border rounded p-4 shadow-sm bg-light">
                     <h2 class="h4 text-dark mb-3">Student</h2>
                     <p><strong>Name:</strong> VANG SOKCHHENG</p>
                     <p><strong>Email:</strong> sokchheng802@gmail.com</p>
+                    <p><strong>Contact:</strong> +855 99 60 18 58</p>
                 </div>
             </div>
 
